@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import fr.univbrest.dosi.bean.Candidat;
 import fr.univbrest.dosi.bean.Formation;
+import fr.univbrest.dosi.bean.Message;
 import fr.univbrest.dosi.bean.Qualificatif;
 import fr.univbrest.dosi.business.CandidatBusiness;
 import fr.univbrest.dosi.business.QualificatifBusiness;
@@ -25,11 +26,11 @@ public class QualificatifController {
 	
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String ajouterQualificatif(@RequestBody Qualificatif qualificatif){
+	public Message ajouterQualificatif(@RequestBody Qualificatif qualificatif){
 		return qualificatifbusiness.ajouterQualificatif(qualificatif);
 	}
 	@RequestMapping(method = RequestMethod.PUT)
-	public String miseAjourdeQualificatif(@RequestBody Qualificatif qualificatifAMaj) {
+	public Message miseAjourdeQualificatif(@RequestBody Qualificatif qualificatifAMaj) {
 		return qualificatifbusiness.modifierQualificatif(qualificatifAMaj);
 	}
 	@RequestMapping(method = RequestMethod.GET)
@@ -38,7 +39,7 @@ public class QualificatifController {
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE, value="/Supp/{idQualificatif}")
-	public String supprimerFormation(@PathVariable Integer idQualificatif) {
+	public Message supprimerFormation(@PathVariable Integer idQualificatif) {
 		return qualificatifbusiness.supprimerQualificatif(idQualificatif);
 	}
 	

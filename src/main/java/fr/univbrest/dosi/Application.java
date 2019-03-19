@@ -18,6 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableJpaRepositories
 @EnableTransactionManagement
 @EnableSwagger2
+
 public class Application extends WebMvcConfigurerAdapter {
 
     public static void main(final String[] args) {

@@ -1,9 +1,9 @@
 package fr.univbrest.dosi.bean;
 
-public class Erreur {
+public class Message {
 	private String message;
 
-	public Erreur(String message) {
+	public Message(String message) {
 		super();
 		this.message = message;
 	}
@@ -16,7 +16,7 @@ public class Erreur {
 		this.message = message;
 	}
 
-	public Erreur() {
+	public Message() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

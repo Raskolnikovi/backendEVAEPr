@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import fr.univbrest.dosi.bean.Candidat;
 import fr.univbrest.dosi.bean.Formation;
+import fr.univbrest.dosi.bean.Message;
 import fr.univbrest.dosi.bean.Question;
 import fr.univbrest.dosi.business.CandidatBusiness;
 import fr.univbrest.dosi.business.QuestionBusiness;
@@ -25,11 +26,11 @@ public class QuestionController {
 	
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String ajouterQuestion(@RequestBody Question Question){
+	public Message ajouterQuestion(@RequestBody Question Question){
 		return Questionbusiness.ajouterQuestion(Question);
 	}
 	@RequestMapping(method = RequestMethod.PUT)
-	public String miseAjourdeQuestion(@RequestBody Question QuestionAMaj) {
+	public Message miseAjourdeQuestion(@RequestBody Question QuestionAMaj) {
 		return Questionbusiness.modifierQuestion(QuestionAMaj);
 	}
 	@RequestMapping(method = RequestMethod.GET)
@@ -38,7 +39,7 @@ public class QuestionController {
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE, value="/Supp/{idQuestion}")
-	public String supprimerFormation(@PathVariable Integer idQuestion) {
+	public Message supprimerFormation(@PathVariable Integer idQuestion) {
 		return Questionbusiness.supprimerQuestion(idQuestion);
 	}
 	

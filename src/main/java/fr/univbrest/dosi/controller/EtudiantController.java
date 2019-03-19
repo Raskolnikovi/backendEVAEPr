@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import fr.univbrest.dosi.bean.Erreur;
+
 import fr.univbrest.dosi.bean.Etudiant;
+import fr.univbrest.dosi.bean.Message;
 import fr.univbrest.dosi.business.EtudiantBusiness;
 
 
@@ -23,16 +24,16 @@ public class EtudiantController {
 	}
 	
 	@RequestMapping(value="/delete/{noEtudiant}" ,method = RequestMethod.DELETE)
-	public Erreur DeleteEtudiant(@PathVariable("noEtudiant") String noEtudiant)
+	public Message DeleteEtudiant(@PathVariable("noEtudiant") String noEtudiant)
 	{
 		try
 		{
 			this.etudiantBusiness.deleteEtudiantParID(noEtudiant);
-			return new Erreur("Etudiant supprimé");
+			return new Message("Etudiant supprimé");
 		}catch (Exception ex) 
 			{
 	         ex.getMessage();
-	         return new Erreur("Erreur : Impossible ");	      
+	         return new Message("Erreur : Impossible ");	      
 	  	    }
 	}
 	

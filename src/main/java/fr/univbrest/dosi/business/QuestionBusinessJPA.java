@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
+import fr.univbrest.dosi.bean.Message;
 import fr.univbrest.dosi.bean.Question;
 import fr.univbrest.dosi.repository.QuestionRepository;
 @Component
@@ -23,38 +24,38 @@ public class QuestionBusinessJPA implements QuestionBusiness {
 		this.repos = repos;
 	}
 	@Override
-	public String ajouterQuestion(Question q) {
+	public Message ajouterQuestion(Question q) {
 		try {
 			repos.save(q);
-			return "Question Ajouté";
+			return new Message("Question ajoutée !");	 
 		}catch(Exception e) {
 			e.printStackTrace();
-			return "Question ERR";
+			return new Message("Erreur : Impossible ");	 
 		}
 	}
 	
 
 	
 	@Override
-	public String modifierQuestion(Question q) {
+	public Message modifierQuestion(Question q) {
 		try {
 			repos.save(q);
-			return "Question Modifié";
+			return new Message("Modification valide! ");	 
 		}catch(Exception e) {
-			return "Erreur Modification";
+			return new Message("Erreur : Impossible ");	 
 		}
 	}
 
 	@Override
-	public String supprimerQuestion(Integer idQuestion) {
+	public Message supprimerQuestion(Integer idQuestion) {
 		try{
 			repos.deleteById(idQuestion);
-			return "Question supprimé";
+			return new Message("Suppression validée ");	 
 		}catch (DataIntegrityViolationException e) {
-		    	return "Question utilisé dans une ou plusieurs evaluations!";
+			return new Message("Question utilisé dans une ou plusieurs evaluations!");	 
 		}
 		catch (Exception e) {
-	    	return "Erreur suppression : DATABASE!";
+			return new Message("Erreur suppression : impossible!");	 			
 	}
 	}
 
