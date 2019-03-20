@@ -2,6 +2,8 @@ package fr.univbrest.dosi.business;
 
 import java.util.List;
 
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
@@ -37,9 +39,11 @@ public class EtudiantBusinessJPA implements EtudiantBusiness {
 		try{
 			repos.deleteById(id);
 			return new Message("Etudiant supprimé ");	 
+		}catch (DataIntegrityViolationException e) {
+			return new Message("Erreur : Etudiant utilisé dans une ou plusieurs réponses ");	 
 		}
 		catch (Exception e) {
-			return new Message("Erreur Suppression");	 
+			return new Message("Erreur : Base de données ");	 
 	}
 	}
 

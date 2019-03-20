@@ -26,15 +26,7 @@ public class EtudiantController {
 	@RequestMapping(value="/delete/{noEtudiant}" ,method = RequestMethod.DELETE)
 	public Message DeleteEtudiant(@PathVariable("noEtudiant") String noEtudiant)
 	{
-		try
-		{
-			this.etudiantBusiness.deleteEtudiantParID(noEtudiant);
-			return new Message("Etudiant supprimé");
-		}catch (Exception ex) 
-			{
-	         ex.getMessage();
-	         return new Message("Erreur : Impossible ");	      
-	  	    }
+		return etudiantBusiness.deleteEtudiantParID(noEtudiant);
 	}
 	
 
