@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import fr.univbrest.dosi.bean.Message;
 import fr.univbrest.dosi.bean.Question;
-import fr.univbrest.dosi.repository.QuestionRepository;
+import fr.univbrest.dosi.repositories.QuestionRepository;
 @Component
 public class QuestionBusinessJPA implements QuestionBusiness {
 	

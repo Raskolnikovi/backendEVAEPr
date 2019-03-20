@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 import fr.univbrest.dosi.bean.ElementConstitutif;
 import fr.univbrest.dosi.bean.UniteEnseignementPK;
-import fr.univbrest.dosi.repository.ElementConstitutifRepository;
-import fr.univbrest.dosi.repository.EtudiantRepository;
+import fr.univbrest.dosi.repositories.ElementConstitutifRepository;
+import fr.univbrest.dosi.repositories.EtudiantRepository;
 @Component
 public class ElementConstitutifBusinessJPA implements ElementConstitutifBusiness {
 	private ElementConstitutifRepository repos ;

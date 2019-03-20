@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import fr.univbrest.dosi.bean.Enseignant;
-import fr.univbrest.dosi.repository.EnseignantRepository;
+import fr.univbrest.dosi.repositories.EnseignantRepository;
 
 
 

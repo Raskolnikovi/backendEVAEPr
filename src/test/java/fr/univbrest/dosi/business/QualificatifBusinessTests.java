@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import fr.univbrest.dosi.bean.Qualificatif;
-import fr.univbrest.dosi.repository.QualificatifRepository;
+import fr.univbrest.dosi.repositories.QualificatifRepository;
 
 
 @RunWith(MockitoJUnitRunner.class)

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import fr.univbrest.dosi.bean.Message;
 import fr.univbrest.dosi.bean.Qualificatif;
-import fr.univbrest.dosi.repository.QualificatifRepository;
+import fr.univbrest.dosi.repositories.QualificatifRepository;
 @Component
 public class QualificatifBusinessJPA implements QualificatifBusiness {
 	

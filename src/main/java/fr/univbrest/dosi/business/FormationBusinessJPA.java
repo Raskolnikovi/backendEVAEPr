@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import fr.univbrest.dosi.bean.Formation;
-import fr.univbrest.dosi.repository.FormationRepository;
+import fr.univbrest.dosi.repositories.FormationRepository;
 
 //c lui de gerer sa classe 
 @Component

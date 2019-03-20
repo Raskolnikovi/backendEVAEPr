@@ -1,4 +1,4 @@
-package fr.univbrest.dosi.repository;
+package fr.univbrest.dosi.repositories;
 
 import java.util.List;
 

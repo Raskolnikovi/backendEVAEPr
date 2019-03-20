@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.univbrest.dosi.bean.Candidat;
-import fr.univbrest.dosi.repository.CandidatRepository;
+import fr.univbrest.dosi.repositories.CandidatRepository;
 
 @Service
 public class CandidatBusinessJPA implements CandidatBusiness {

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import fr.univbrest.dosi.bean.Promotion;
 import fr.univbrest.dosi.bean.PromotionPK;
-import fr.univbrest.dosi.repository.PromotionRepository;
+import fr.univbrest.dosi.repositories.PromotionRepository;
 
 @Component
 public class PromotionBussinessJPA   implements  PromotionBussiness{

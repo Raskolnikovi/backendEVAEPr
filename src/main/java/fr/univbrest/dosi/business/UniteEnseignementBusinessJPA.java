@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.univbrest.dosi.bean.UniteEnseignement;
-import fr.univbrest.dosi.repository.UniteEnseignementRepository;
+import fr.univbrest.dosi.repositories.UniteEnseignementRepository;
 @Service
 public class UniteEnseignementBusinessJPA implements UniteEnseignementBusiness {
 	
