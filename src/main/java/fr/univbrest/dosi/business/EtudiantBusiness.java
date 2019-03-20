@@ -7,5 +7,5 @@ import fr.univbrest.dosi.bean.*;
 public interface EtudiantBusiness {
 	
 	List<Etudiant> rechercherParPromotion(String codeFormation, String anneeUniversitaire);
-	void deleteEtudiantParID(String id);
+	Message deleteEtudiantParID(String id);
 }
