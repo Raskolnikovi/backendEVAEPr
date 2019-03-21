@@ -69,5 +69,10 @@ public class QuestionBusinessJPA implements QuestionBusiness {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public long nombreQuestion() {
+		// TODO Auto-generated method stub
+		return repos.count();
+	}
 
 }

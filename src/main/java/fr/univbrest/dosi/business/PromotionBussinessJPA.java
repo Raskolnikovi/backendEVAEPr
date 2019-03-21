@@ -34,14 +34,6 @@ public class PromotionBussinessJPA   implements  PromotionBussiness{
 	}
 
 	
-	public List<Promotion> rechercherParLieuRentree(String lieuRentree)
-	{
-		List<Promotion> promoRecherche = repos.findByLieuRentree(lieuRentree);
-		return promoRecherche;
-		
-		
-	}
-	
 	@Override
 	public void supprimerPromotionByID(PromotionPK promotionASuppPK) {
 		//Optional<Promotion> p = repos.findById(promotionASuppPK);
@@ -53,12 +45,6 @@ public class PromotionBussinessJPA   implements  PromotionBussiness{
 		return (List<Promotion>) repos.findAll();
 	}
 
-	@Override
-	public List<Promotion> rechercheSiglePromotion(String siglePromotion) {
-		// TODO Auto-generated method stub
-		List<Promotion> promoRecherche = repos.findBySiglePromotion(siglePromotion);		
-		return promoRecherche;
-	}
 	
 	@Override
 	public List<Promotion> rechercheParFormation(String codeFormation) {
@@ -71,6 +57,12 @@ public class PromotionBussinessJPA   implements  PromotionBussiness{
 	public Promotion rechercherPromotionParId(PromotionPK PK) {
 		// TODO Auto-generated method stub
 		return new Promotion();
+	}
+	
+	@Override
+	public long nombrePromotions() {
+		// TODO Auto-generated method stub
+		return repos.count();
 	}
 
 	

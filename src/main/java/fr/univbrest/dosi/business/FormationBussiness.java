@@ -15,5 +15,7 @@ public interface FormationBussiness {
 	void supprimerFormationByID(String codeFormation);
 
 	Formation updateFormation(Formation formationMaj);
+	
+	
 
 }

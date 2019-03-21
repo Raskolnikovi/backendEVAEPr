@@ -68,5 +68,12 @@ public class QualificatifBusinessJPA implements QualificatifBusiness {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public long NombreQualificatifs() {
+		// TODO Auto-generated method stub
+		return repos.count();
+	}
+	
+	
 
 }

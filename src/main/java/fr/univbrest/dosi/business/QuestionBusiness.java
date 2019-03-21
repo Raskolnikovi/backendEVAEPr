@@ -12,5 +12,6 @@ public interface QuestionBusiness {
 	Message supprimerQuestion(Integer idQuestion);
 	List<Question> rechercherQuestions();
 	Question rechercherParId(String id);
+	long nombreQuestion();
 
 }

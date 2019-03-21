@@ -8,7 +8,6 @@ import fr.univbrest.dosi.bean.Promotion;
 import fr.univbrest.dosi.bean.PromotionPK;
 
 public interface PromotionRepository extends CrudRepository<Promotion, PromotionPK>  {
-	List<Promotion> findBySiglePromotion(String siglePromotion);
-	List<Promotion>  findByLieuRentree(String lieuRentree);
+
 	List<Promotion> findByFormationCodeFormation(String codeFormation);
 }

@@ -40,22 +40,11 @@ public class PromotionController {
 		return business.recupererTousLesPromotions();
 	}
 	
-	
-	@RequestMapping(method = RequestMethod.GET, value="/SiglePromotion/{SiglePromotion}")
-	public List<Promotion> recupererPromotionParSigle(@PathVariable String SiglePromotion) {
-		return business.rechercheSiglePromotion(SiglePromotion);
-	}
-	
 	@RequestMapping(method = RequestMethod.GET, value="/For/{codeFormation}")
 	public List<Promotion> recupererPromotionParFormation(@PathVariable String codeFormation) {
 		return business.rechercheParFormation(codeFormation);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value="/ProcessusStage/{processusStage}")
-	public List<Promotion> recupererPromotionParLeuRentree(@PathVariable String lieuRentree) {
-		return business.rechercherParLieuRentree(lieuRentree);
-	}
-
 	@RequestMapping(method = RequestMethod.GET, value="/id/{anneUniv}/{codeForm}")
 	public Promotion recupererPromotionParId(@PathVariable String anneUniv , @PathVariable String codeForm) {
 		return business.rechercherPromotionParId(new PromotionPK(anneUniv,codeForm));

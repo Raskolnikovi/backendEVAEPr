@@ -1,6 +1,8 @@
 package fr.univbrest.dosi.bean;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -52,6 +54,8 @@ public class Formation implements Serializable {
 		this.n0Annee = n0Annee;
 		this.nomFormation = nomFormation;
 	}
+
+
 
 
 	public String getCodeFormation() {

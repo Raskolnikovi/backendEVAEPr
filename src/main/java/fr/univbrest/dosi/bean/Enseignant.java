@@ -48,6 +48,15 @@ public class Enseignant implements Serializable {
 	public Enseignant() {
 	}
 
+
+
+	public Enseignant(String string, String string2) {
+		this.nom = string;
+		this.prenom = string2;
+	}
+
+
+
 	public int getNoEnseignant() {
 		return this.noEnseignant;
 	}

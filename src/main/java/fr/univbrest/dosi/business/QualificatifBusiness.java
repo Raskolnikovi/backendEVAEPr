@@ -11,5 +11,6 @@ public interface QualificatifBusiness {
 	Message supprimerQualificatif(Integer idQualificatif);
 	List<Qualificatif> rechercherQualificatifs();
 	Qualificatif rechercherParId(String id);
+	long NombreQualificatifs();
 
 }
