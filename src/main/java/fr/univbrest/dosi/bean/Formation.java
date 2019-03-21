@@ -15,7 +15,6 @@ public class Formation implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="CODE_FORMATION")
 	private String codeFormation;
 
@@ -40,6 +39,20 @@ public class Formation implements Serializable {
 
 	public Formation() {
 	}
+
+	
+	public Formation(String codeFormation, Date debutAccreditation, String diplome, String doubleDiplome,
+			Date finAccreditation, byte n0Annee, String nomFormation) {
+		super();
+		this.codeFormation = codeFormation;
+		this.debutAccreditation = debutAccreditation;
+		this.diplome = diplome;
+		this.doubleDiplome = doubleDiplome;
+		this.finAccreditation = finAccreditation;
+		this.n0Annee = n0Annee;
+		this.nomFormation = nomFormation;
+	}
+
 
 	public String getCodeFormation() {
 		return this.codeFormation;
