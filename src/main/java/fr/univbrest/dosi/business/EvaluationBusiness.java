@@ -7,8 +7,10 @@ import fr.univbrest.dosi.bean.Message;
 
 public interface EvaluationBusiness {
 	
-	Message creerEvaluation(Evaluation evaluationACreer);
+	void creerEvaluation(Evaluation evaluationACreer) throws Exception;
 
 	List<Evaluation> recupererTousLesEvaluations();
+
+	List<Evaluation> recupererEvaluationsParEnseignant(int noEnseignant);
 
 }

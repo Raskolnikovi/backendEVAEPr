@@ -15,9 +15,20 @@ public class Evaluation implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_EVALUATION")
-	private String idEvaluation;
+	private int idEvaluation;
+	
+	@Column(name="ANNEE_UNIVERSITAIRE")
+	private String anneeUniversitaire;
+
+	public String getAnneeUniversitaire() {
+		return anneeUniversitaire;
+	}
+
+	public void setAnneeUniversitaire(String anneeUniversitaire) {
+		this.anneeUniversitaire = anneeUniversitaire;
+	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="DEBUT_REPONSE")
@@ -69,11 +80,11 @@ public class Evaluation implements Serializable {
 	public Evaluation() {
 	}
 
-	public String getIdEvaluation() {
+	public int getIdEvaluation() {
 		return this.idEvaluation;
 	}
 
-	public void setIdEvaluation(String idEvaluation) {
+	public void setIdEvaluation(int idEvaluation) {
 		this.idEvaluation = idEvaluation;
 	}
 

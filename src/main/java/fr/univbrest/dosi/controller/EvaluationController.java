@@ -29,14 +29,19 @@ public class EvaluationController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public Message creerEvaluation(@RequestBody Evaluation evaluationACreer) {
-		return evaluationBusiness.creerEvaluation(evaluationACreer); 
+	public void creerEvaluation(@RequestBody Evaluation evaluationACreer) throws Exception {
+		 evaluationBusiness.creerEvaluation(evaluationACreer); 
 		
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Evaluation> recupererTousLesPromotions() {
 		return evaluationBusiness.recupererTousLesEvaluations();
+	}
+	
+	@RequestMapping(value="/{noEnseignant}" ,method = RequestMethod.GET)
+	public List<Evaluation> recupererTousLesPromotions(@PathVariable("noEnseignant") int noEnseignant) {
+		return evaluationBusiness.recupererEvaluationsParEnseignant(noEnseignant);
 	}
 	
 

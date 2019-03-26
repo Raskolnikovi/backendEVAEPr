@@ -21,18 +21,20 @@ private EvaluationRepository repos ;
 	}
 
 	@Override
-	public Message creerEvaluation(Evaluation evaluationACreer) {
-		try {
+	public void creerEvaluation(Evaluation evaluationACreer) throws Exception {
+		
 			repos.save(evaluationACreer);
-			return new Message("Evaluation Ajoutée");	 
-		}catch(Exception e) {
-			return new Message("Erreur : Ajout impossible ");	 
-		}
+	
 	}
 
 	@Override
 	public List<Evaluation> recupererTousLesEvaluations() {
 		return (List<Evaluation>) repos.findAll();
+	}
+	
+	@Override
+	public List<Evaluation> recupererEvaluationsParEnseignant(int noEnseignant) {
+		return (List<Evaluation>) repos.findByEnseignantNoEnseignant(noEnseignant);
 	}
 
 }
