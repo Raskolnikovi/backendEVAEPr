@@ -2,6 +2,11 @@ package fr.univbrest.dosi.bean;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.hibernate.annotations.JoinColumnOrFormula;
+import org.hibernate.annotations.JoinFormula;
+import org.hibernate.annotations.JoinColumnsOrFormulas;
+
 import java.util.Date;
 
 
@@ -38,11 +43,12 @@ public class Evaluation implements Serializable {
 
 	//uni-directional many-to-one association to ElementConstitutif
 	@ManyToOne
-	@JoinColumns({
-		@JoinColumn(name="CODE_EC", referencedColumnName="CODE_EC", insertable=false, updatable=false),
-		@JoinColumn(name="CODE_FORMATION", referencedColumnName="CODE_FORMATION", insertable=false, updatable=false),
-		@JoinColumn(name="CODE_UE", referencedColumnName="CODE_UE", insertable=false, updatable=false)
-		})
+	@JoinColumnsOrFormulas(value = {
+	        @JoinColumnOrFormula(column = @JoinColumn(name="CODE_EC", referencedColumnName="CODE_EC")),
+	        @JoinColumnOrFormula(formula = @JoinFormula(value="CODE_FORMATION", referencedColumnName="CODE_FORMATION")),
+	        @JoinColumnOrFormula(formula = @JoinFormula(value="CODE_UE", referencedColumnName="CODE_UE"))
+	        }) 
+
 	private ElementConstitutif elementConstitutif;
 
 	//uni-directional many-to-one association to Enseignant
@@ -60,9 +66,9 @@ public class Evaluation implements Serializable {
 
 	//uni-directional many-to-one association to UniteEnseignement
 	@ManyToOne
-	@JoinColumns({
-		@JoinColumn(name="CODE_FORMATION", referencedColumnName="CODE_FORMATION", insertable=false, updatable=false),
-		@JoinColumn(name="CODE_UE", referencedColumnName="CODE_UE", insertable=false, updatable=false)
+	@JoinColumnsOrFormulas({
+		@JoinColumnOrFormula(formula = @JoinFormula(value="CODE_FORMATION", referencedColumnName="CODE_FORMATION")),
+		@JoinColumnOrFormula(column = @JoinColumn(name="CODE_UE", referencedColumnName="CODE_UE"))
 		})
 	private UniteEnseignement uniteEnseignement;
 
