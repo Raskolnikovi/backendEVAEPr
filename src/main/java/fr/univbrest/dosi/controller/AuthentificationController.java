@@ -28,10 +28,10 @@ public class AuthentificationController {
 	}
 //em:.+
 	//fonction qui cherche un utilisateur par email
-	@GetMapping("/email/{em:.+}")
-	public Authentification SearchByEmail(@PathVariable("em") String em) throws Exception {
+	@GetMapping("/email/{em:.+}/{pass:.+}")
+	public Authentification SearchByEmail(@PathVariable("em") String em,@PathVariable("pass") String pass) throws Exception {
 		
-		return authentificationBuisness.SearchByEmail(em);
+		return authentificationBuisness.SearchByEmail(em,pass);
 	}
 
 }

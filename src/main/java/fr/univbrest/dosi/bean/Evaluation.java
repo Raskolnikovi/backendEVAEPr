@@ -18,17 +18,6 @@ public class Evaluation implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_EVALUATION")
 	private int idEvaluation;
-	
-	@Column(name="ANNEE_UNIVERSITAIRE")
-	private String anneeUniversitaire;
-
-	public String getAnneeUniversitaire() {
-		return anneeUniversitaire;
-	}
-
-	public void setAnneeUniversitaire(String anneeUniversitaire) {
-		this.anneeUniversitaire = anneeUniversitaire;
-	}
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="DEBUT_REPONSE")
@@ -64,16 +53,16 @@ public class Evaluation implements Serializable {
 	//uni-directional many-to-one association to Promotion
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="ANNEE_UNIVERSITAIRE", referencedColumnName="ANNEE_UNIVERSITAIRE", insertable=false, updatable=false),
-		@JoinColumn(name="CODE_FORMATION", referencedColumnName="CODE_FORMATION", insertable=false, updatable=false)
+		@JoinColumn(name="ANNEE_UNIVERSITAIRE", referencedColumnName="ANNEE_UNIVERSITAIRE"),
+		@JoinColumn(name="CODE_FORMATION", referencedColumnName="CODE_FORMATION")
 		})
 	private Promotion promotion;
 
 	//uni-directional many-to-one association to UniteEnseignement
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="CODE_FORMATION", referencedColumnName="CODE_FORMATION"),
-		@JoinColumn(name="CODE_UE", referencedColumnName="CODE_UE")
+		@JoinColumn(name="CODE_FORMATION", referencedColumnName="CODE_FORMATION", insertable=false, updatable=false),
+		@JoinColumn(name="CODE_UE", referencedColumnName="CODE_UE", insertable=false, updatable=false)
 		})
 	private UniteEnseignement uniteEnseignement;
 

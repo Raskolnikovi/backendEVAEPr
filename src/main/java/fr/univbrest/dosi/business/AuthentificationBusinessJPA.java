@@ -24,11 +24,11 @@ public class AuthentificationBusinessJPA {
         }
         
         // fonction qui retourne l'utilisateur par email ou pseaudo
-        public Authentification SearchByEmail(String email) throws Exception {
-        	Authentification user = authentificationRepository.findByLoginConnection(email);
+        public Authentification SearchByEmail(String email, String motPasse) throws Exception {
+        	Authentification user = authentificationRepository.findByLoginConnectionAndMotPasse(email,motPasse);
         	System.out.println(user);
         	if(user==null) {
-        		 user = authentificationRepository.findByPseudoConnection(email);
+        		 user = authentificationRepository.findByPseudoConnectionAndMotPasse(email, motPasse);
         	System.out.println("1 : "+user);}
         	if(user!=null) {System.out.println("1 : "+user);return user;}
         	else
