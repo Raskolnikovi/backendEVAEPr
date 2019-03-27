@@ -10,4 +10,5 @@ import fr.univbrest.dosi.bean.PromotionPK;
 public interface PromotionRepository extends CrudRepository<Promotion, PromotionPK>  {
 
 	List<Promotion> findByFormationCodeFormation(String codeFormation);
+	List<Promotion> findByEnseignantNoEnseignant(int noEnseignant);
 }

@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.univbrest.dosi.bean.Evaluation;
 import fr.univbrest.dosi.bean.Message;
 import fr.univbrest.dosi.bean.Rubrique;
+import fr.univbrest.dosi.bean.RubriqueEvaluation;
 import fr.univbrest.dosi.business.RubriqueBusiness;
 import fr.univbrest.dosi.business.RubriqueEvaluationBusiness;
 import fr.univbrest.dosi.business.RubriqueOnly;
@@ -29,6 +31,18 @@ public class RubriqueEvaluationController {
 	@RequestMapping(method = RequestMethod.GET, value="/{idEvaluation}")
 	public List<RubriqueOnly> recupererRubriqueEval(@PathVariable int idEvaluation) {
 		return rubriqueBusiness.recupererRubriqueEval(idEvaluation);
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public void creerRubEval(@RequestBody RubriqueEvaluation rubEvalAcreer) {
+		rubriqueBusiness.creerRubEval(rubEvalAcreer); 
+		
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT)
+	public void modifierRubEval(@RequestBody RubriqueEvaluation rubEvalAmodifier) {
+		rubriqueBusiness.modifierRubEval(rubEvalAmodifier); 
+		
 	}
 	
 

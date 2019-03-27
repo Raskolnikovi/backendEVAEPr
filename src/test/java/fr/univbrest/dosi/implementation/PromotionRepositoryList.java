@@ -89,6 +89,12 @@ public class PromotionRepositoryList implements PromotionRepository{
 	public List<Promotion> findByFormationCodeFormation(String codeFormation) {
 		return Promotions.stream().filter(promotion -> promotion.getFormation().getCodeFormation().equals(codeFormation)).collect(Collectors.toList());
 	}
+
+	@Override
+	public List<Promotion> findByEnseignantNoEnseignant(int noEnseignant) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }

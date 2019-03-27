@@ -13,6 +13,7 @@ public interface PromotionBussiness {
 	Promotion rechercherPromotionParId(PromotionPK PK );
 	void supprimerPromotionByID(PromotionPK promotionASuppPK);
 	public List<Promotion> rechercheParFormation(String codeFormation);
+	List<Promotion> rechercherParEnseignant(int noEnseignant);
 	long nombrePromotions();
 	
 

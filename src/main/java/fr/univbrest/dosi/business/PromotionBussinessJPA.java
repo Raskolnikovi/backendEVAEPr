@@ -65,6 +65,13 @@ public class PromotionBussinessJPA   implements  PromotionBussiness{
 		return repos.count();
 	}
 
+	@Override
+	public List<Promotion> rechercherParEnseignant(int noEnseignant) {
+		List<Promotion> promoRecherche = repos.findByEnseignantNoEnseignant(noEnseignant);		
+		return promoRecherche;
+		
+	}
+
 	
 
 }

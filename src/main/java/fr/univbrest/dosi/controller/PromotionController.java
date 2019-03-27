@@ -45,6 +45,11 @@ public class PromotionController {
 		return business.rechercheParFormation(codeFormation);
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value="/ens/{noEnseignant}")
+	public List<Promotion> recupererPromotionParEnseignant(@PathVariable int noEnseignant) {
+		return business.rechercherParEnseignant(noEnseignant);
+	}
+	
 	@RequestMapping(method = RequestMethod.GET, value="/id/{anneUniv}/{codeForm}")
 	public Promotion recupererPromotionParId(@PathVariable String anneUniv , @PathVariable String codeForm) {
 		return business.rechercherPromotionParId(new PromotionPK(anneUniv,codeForm));
