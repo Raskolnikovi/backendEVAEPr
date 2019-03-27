@@ -35,14 +35,18 @@ public class EvaluationController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Evaluation> recupererTousLesPromotions() {
+	public List<Evaluation> recupererTousLesEvaluations() {
 		return evaluationBusiness.recupererTousLesEvaluations();
 	}
 	
 	@RequestMapping(value="/{noEnseignant}" ,method = RequestMethod.GET)
-	public List<Evaluation> recupererTousLesPromotions(@PathVariable("noEnseignant") int noEnseignant) {
+	public List<Evaluation> recupererEvalParEnseignant(@PathVariable("noEnseignant") int noEnseignant) {
 		return evaluationBusiness.recupererEvaluationsParEnseignant(noEnseignant);
 	}
 	
+	@RequestMapping(value="/{idEvaluation}" ,method = RequestMethod.GET)
+	public Evaluation recupererEvalParId(@PathVariable("idEvaluation") int idEvaluation) {
+		return evaluationBusiness.recupererEvaluationParId(idEvaluation);
+	}
 
 }

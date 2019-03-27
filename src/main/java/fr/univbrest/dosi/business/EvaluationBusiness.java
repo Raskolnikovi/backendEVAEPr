@@ -12,5 +12,7 @@ public interface EvaluationBusiness {
 	List<Evaluation> recupererTousLesEvaluations();
 
 	List<Evaluation> recupererEvaluationsParEnseignant(int noEnseignant);
+	
+	Evaluation recupererEvaluationParId(int id);
 
 }

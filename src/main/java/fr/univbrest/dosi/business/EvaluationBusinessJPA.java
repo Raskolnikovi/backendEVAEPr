@@ -37,4 +37,9 @@ private EvaluationRepository repos ;
 		return (List<Evaluation>) repos.findByEnseignantNoEnseignant(noEnseignant);
 	}
 
+	@Override
+	public Evaluation recupererEvaluationParId(int id) {
+		return repos.findById(id).orElse(null);
+	}
+
 }
