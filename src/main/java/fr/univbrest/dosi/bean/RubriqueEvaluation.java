@@ -15,9 +15,9 @@ public class RubriqueEvaluation implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_RUBRIQUE_EVALUATION")
-	private String idRubriqueEvaluation;
+	private int idRubriqueEvaluation;
 
 	private String designation;
 
@@ -36,11 +36,11 @@ public class RubriqueEvaluation implements Serializable {
 	public RubriqueEvaluation() {
 	}
 
-	public String getIdRubriqueEvaluation() {
+	public int getIdRubriqueEvaluation() {
 		return this.idRubriqueEvaluation;
 	}
 
-	public void setIdRubriqueEvaluation(String idRubriqueEvaluation) {
+	public void setIdRubriqueEvaluation(int idRubriqueEvaluation) {
 		this.idRubriqueEvaluation = idRubriqueEvaluation;
 	}
 
@@ -77,3 +77,8 @@ public class RubriqueEvaluation implements Serializable {
 	}
 
 }
+
+ interface RubriqueOnly {
+
+	  Rubrique getRubrique();
+	}
