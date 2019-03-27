@@ -39,7 +39,7 @@ public class EvaluationController {
 		return evaluationBusiness.recupererTousLesEvaluations();
 	}
 	
-	@RequestMapping(value="/{noEnseignant}" ,method = RequestMethod.GET)
+	@RequestMapping(value="/ens/{noEnseignant}" ,method = RequestMethod.GET)
 	public List<Evaluation> recupererEvalParEnseignant(@PathVariable("noEnseignant") int noEnseignant) {
 		return evaluationBusiness.recupererEvaluationsParEnseignant(noEnseignant);
 	}
