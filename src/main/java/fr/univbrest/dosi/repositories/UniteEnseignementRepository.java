@@ -10,4 +10,6 @@ import fr.univbrest.dosi.bean.UniteEnseignementPK;
 public interface UniteEnseignementRepository extends CrudRepository<UniteEnseignement, UniteEnseignementPK>  {
 
 	List<UniteEnseignement> findUniteEnseignementByFormationCodeFormation(String codeFormation);
+	List<UniteEnseignement> findByEnseignantNoEnseignant(int noEnseignant);
+
 }

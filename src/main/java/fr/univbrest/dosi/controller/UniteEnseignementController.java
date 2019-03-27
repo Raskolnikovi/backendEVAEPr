@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import fr.univbrest.dosi.bean.Etudiant;
+import fr.univbrest.dosi.bean.Promotion;
 import fr.univbrest.dosi.bean.UniteEnseignement;
 import fr.univbrest.dosi.business.EtudiantBusiness;
 import fr.univbrest.dosi.business.UniteEnseignementBusiness;
@@ -21,6 +22,11 @@ public class UniteEnseignementController {
 	@Autowired
 	public UniteEnseignementController(UniteEnseignementBusiness business) {
 		this.uniteEnseignementBusiness = business;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value="/ens/{noEnseignant}")
+	public List<UniteEnseignement> recupererUEParEnseignant(@PathVariable int noEnseignant) {
+		return uniteEnseignementBusiness.rechercherParEnseignant(noEnseignant);
 	}
 	
 

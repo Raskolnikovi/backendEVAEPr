@@ -45,6 +45,11 @@ public class RubriqueEvaluationController {
 		
 	}
 	
+	@RequestMapping(method = RequestMethod.DELETE, value="/Supp/{idRubEval}")
+	public Message supprimerRubEval(@PathVariable int idRubEval) {
+		return rubriqueBusiness.supprimerRubEval(idRubEval);
+	}
+	
 
 
 }
