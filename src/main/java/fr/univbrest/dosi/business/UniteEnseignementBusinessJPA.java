@@ -29,4 +29,10 @@ public class UniteEnseignementBusinessJPA implements UniteEnseignementBusiness {
 		return ueRecherche;
 	}
 
+	@Override
+	public List<UniteEnseignement> rechercherParFormationAndEnseignant(String codeFormation, int noEnseignant) {
+		List<UniteEnseignement> ueRecherche = repos.findUniteEnseignementByFormationCodeFormationAndEnseignantNoEnseignant(codeFormation,noEnseignant);		
+		return ueRecherche;
+	}
+
 }

@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.univbrest.dosi.bean.Message;
+import fr.univbrest.dosi.bean.QuestionEvaluation;
 import fr.univbrest.dosi.bean.Rubrique;
+import fr.univbrest.dosi.bean.RubriqueEvaluation;
 import fr.univbrest.dosi.business.QuestionEvaluationBusiness;
 import fr.univbrest.dosi.business.RubriqueBusiness;
 import fr.univbrest.dosi.business.RubriqueEvaluationBusiness;
@@ -31,6 +33,24 @@ public class QuestionEvaluationController {
 	@RequestMapping(method = RequestMethod.GET, value="/{idRubEval}")
 	public List<QuestionOnly> recupererQuestionsRubriqueEval(@PathVariable int idRubEval) {
 		return evalBusiness.recupererQuestionRubEval(idRubEval);
+	}
+	
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public void creerQstEval(@RequestBody QuestionEvaluation QstEvalAcreer) {
+		evalBusiness.creerQstEval(QstEvalAcreer); 
+		
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT)
+	public void modifierQstEval(@RequestBody QuestionEvaluation QstEvalAmodifier) {
+		evalBusiness.modifierQstEval(QstEvalAmodifier); 
+		
+	}
+	
+	@RequestMapping(method = RequestMethod.DELETE, value="/Supp/{idQstEval}")
+	public Message supprimerQstEval(@PathVariable int idQstEval) {
+		return evalBusiness.supprimerQstEval(idQstEval);
 	}
 	
 

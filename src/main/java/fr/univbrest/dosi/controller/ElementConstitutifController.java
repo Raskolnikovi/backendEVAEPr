@@ -30,5 +30,11 @@ public class ElementConstitutifController {
 		
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value="/{codeFormation}/{codeUe}/{noEnseignant}")
+	public List<ElementConstitutif> recupererUeParFormationEns(@PathVariable String codeFormation, @PathVariable String codeUe, @PathVariable int noEnseignant) {
+		return elementConstitutifBusiness.rechercherParUniteEnseignementEnseignant(codeUe, codeFormation, noEnseignant);
+		
+	}
+	
 
 }

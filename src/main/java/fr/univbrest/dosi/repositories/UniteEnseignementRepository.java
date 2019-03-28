@@ -11,5 +11,6 @@ public interface UniteEnseignementRepository extends CrudRepository<UniteEnseign
 
 	List<UniteEnseignement> findUniteEnseignementByFormationCodeFormation(String codeFormation);
 	List<UniteEnseignement> findByEnseignantNoEnseignant(int noEnseignant);
+	List<UniteEnseignement> findUniteEnseignementByFormationCodeFormationAndEnseignantNoEnseignant(String codeFormation,int noEnseignant);
 
 }

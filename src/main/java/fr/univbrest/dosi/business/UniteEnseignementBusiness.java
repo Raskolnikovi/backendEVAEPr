@@ -9,5 +9,6 @@ public interface UniteEnseignementBusiness {
 	
 	List<UniteEnseignement> rechercherParFormation(String codeFormation);
 	List<UniteEnseignement> rechercherParEnseignant(int noEnseignant);
+	List<UniteEnseignement> rechercherParFormationAndEnseignant(String codeFormation, int noEnseignant);
 
 }

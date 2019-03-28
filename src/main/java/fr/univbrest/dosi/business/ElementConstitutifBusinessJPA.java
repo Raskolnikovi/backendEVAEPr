@@ -23,5 +23,11 @@ public class ElementConstitutifBusinessJPA implements ElementConstitutifBusiness
 		UniteEnseignementPK ue = new UniteEnseignementPK(codeFormation, codeUe);
 		return repos.findByUniteEnseignementId(ue);
 	}
+	@Override
+	public List<ElementConstitutif> rechercherParUniteEnseignementEnseignant(String codeUe, String codeFormation,
+			int noEnseignant) {
+		UniteEnseignementPK ue = new UniteEnseignementPK(codeFormation, codeUe);
+		return repos.findByUniteEnseignementIdAndEnseignantNoEnseignant(ue,noEnseignant);
+	}
 
 }

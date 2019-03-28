@@ -36,5 +36,11 @@ public class UniteEnseignementController {
 		
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value="/ensfor/{noEnseignant}/{codeFormation}")
+	public List<UniteEnseignement> recupererUeParEnsFormation(@PathVariable int noEnseignant,@PathVariable String codeFormation) {
+		return uniteEnseignementBusiness.rechercherParFormationAndEnseignant(codeFormation,noEnseignant);
+		
+	}
+	
 
 }
