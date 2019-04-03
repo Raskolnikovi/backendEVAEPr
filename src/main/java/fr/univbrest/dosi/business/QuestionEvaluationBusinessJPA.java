@@ -47,7 +47,8 @@ public class QuestionEvaluationBusinessJPA implements QuestionEvaluationBusiness
 			repos.deleteById(idQstEval);
 			return new Message("Question supprimée ");	 
 		}catch (DataIntegrityViolationException e) {
-			return new Message("Erreur : Contrainte");	 
+			
+			return new Message("Erreur : Contrainte"+e.toString());	 
 		}
 		catch (Exception e) {
 			return new Message("Erreur : Base de données ");	 
