@@ -65,8 +65,7 @@ public class QualificatifBusinessJPA implements QualificatifBusiness {
 
 	@Override
 	public Qualificatif rechercherParId(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Qualificatif();
 	}
 	@Override
 	public long NombreQualificatifs() {
