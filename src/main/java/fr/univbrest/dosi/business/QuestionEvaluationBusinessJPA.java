@@ -30,7 +30,7 @@ public class QuestionEvaluationBusinessJPA implements QuestionEvaluationBusiness
 	@Override
 	public void creerQstEval(QuestionEvaluation qstEvalACreer) {
 		QuestionEvaluation rb = repos.findFirstByRubriqueEvaluationIdRubriqueEvaluationOrderByOrdreDesc(qstEvalACreer.getRubriqueEvaluation().getIdRubriqueEvaluation());
-		qstEvalACreer.setOrdre(qstEvalACreer.getOrdre()+1);
+		qstEvalACreer.setOrdre(rb.getOrdre()+1);
 		repos.save(qstEvalACreer);
 		
 	}
