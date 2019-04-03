@@ -60,7 +60,7 @@ public class QualificatifBusinessJPA implements QualificatifBusiness {
 
 	@Override
 	public List<Qualificatif> rechercherQualificatifs() {
-		return (List<Qualificatif>) repos.findAll();
+		return (List<Qualificatif>) repos.findAllByOrderByOrdreAsc();
 	}
 
 	@Override

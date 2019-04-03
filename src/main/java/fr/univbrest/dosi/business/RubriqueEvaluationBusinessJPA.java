@@ -27,11 +27,12 @@ public class RubriqueEvaluationBusinessJPA implements RubriqueEvaluationBusiness
 
 	@Override
 	public List<RubriqueOnly> recupererRubriqueEval(int eval) {
-		return (List<RubriqueOnly>) repos.findByEvaluationIdEvaluation(eval);
+		return (List<RubriqueOnly>) repos.findByEvaluationIdEvaluationOrderByOrdreAsc(eval);
 	}
 
 	@Override
 	public void creerRubEval(RubriqueEvaluation rubEvalACreer) {
+		
 		repos.save(rubEvalACreer);
 		
 	}

@@ -80,4 +80,10 @@ public class QualificatifRepositoryList implements QualificatifRepository{
 		
 	}
 
+	@Override
+	public List<Qualificatif> findAllByOrderByOrdreAsc() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

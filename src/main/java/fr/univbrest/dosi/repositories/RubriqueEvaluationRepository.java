@@ -9,6 +9,7 @@ import fr.univbrest.dosi.bean.RubriqueEvaluation;
 import fr.univbrest.dosi.business.RubriqueOnly;
 
 public interface RubriqueEvaluationRepository extends CrudRepository<RubriqueEvaluation, Integer> {
-	List<RubriqueOnly> findByEvaluationIdEvaluation(int idevaluation);
-
+	List<RubriqueOnly> findByEvaluationIdEvaluationOrderByOrdreAsc(int idevaluation);
+	List<RubriqueOnly> findByEvaluationIdEvaluationAndOrdreGreaterThan(int idevaluation, int ordre);
+	List<RubriqueOnly> findByEvaluationIdEvaluationAndOrdreLessThan(int idevaluation, int ordre);
 }

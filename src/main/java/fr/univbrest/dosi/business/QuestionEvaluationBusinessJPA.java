@@ -23,7 +23,7 @@ public class QuestionEvaluationBusinessJPA implements QuestionEvaluationBusiness
 
 	@Override
 	public List<QuestionOnly> recupererQuestionRubEval(int rubeval) {
-		return (List<QuestionOnly>) repos.findByRubriqueEvaluationIdRubriqueEvaluation(rubeval);
+		return (List<QuestionOnly>) repos.findByRubriqueEvaluationIdRubriqueEvaluationOrderByOrdreAsc(rubeval);
 	}
 
 	@Override
