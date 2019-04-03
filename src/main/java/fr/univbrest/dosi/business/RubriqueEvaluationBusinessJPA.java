@@ -32,7 +32,8 @@ public class RubriqueEvaluationBusinessJPA implements RubriqueEvaluationBusiness
 
 	@Override
 	public void creerRubEval(RubriqueEvaluation rubEvalACreer) {
-
+		RubriqueEvaluation rb = repos.findFirstByEvaluationIdEvaluationOrderByOrdreDesc(rubEvalACreer.getEvaluation().getIdEvaluation());
+		rubEvalACreer.setOrdre(rubEvalACreer.getOrdre()+1);
 		repos.save(rubEvalACreer);
 		
 	}

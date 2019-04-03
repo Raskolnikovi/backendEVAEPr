@@ -61,8 +61,8 @@ public class QuestionEvaluation implements Serializable {
 		return this.ordre;
 	}
 
-	public void setOrdre(byte ordre) {
-		this.ordre = ordre;
+	public void setOrdre(int i) {
+		this.ordre = (byte) i;
 	}
 
 	public Qualificatif getQualificatif() {

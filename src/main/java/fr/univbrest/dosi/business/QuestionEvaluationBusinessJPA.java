@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import fr.univbrest.dosi.bean.Message;
 import fr.univbrest.dosi.bean.QuestionEvaluation;
+import fr.univbrest.dosi.bean.RubriqueEvaluation;
 import fr.univbrest.dosi.repositories.QuestionEvaluationRepository;
 import fr.univbrest.dosi.repositories.QuestionOnly;
 import fr.univbrest.dosi.repositories.RubriqueEvaluationRepository;
@@ -28,6 +29,8 @@ public class QuestionEvaluationBusinessJPA implements QuestionEvaluationBusiness
 
 	@Override
 	public void creerQstEval(QuestionEvaluation qstEvalACreer) {
+		QuestionEvaluation rb = repos.findFirstByRubriqueEvaluationIdRubriqueEvaluationOrderByOrdreDesc(qstEvalACreer.getRubriqueEvaluation().getIdRubriqueEvaluation());
+		qstEvalACreer.setOrdre(qstEvalACreer.getOrdre()+1);
 		repos.save(qstEvalACreer);
 		
 	}
