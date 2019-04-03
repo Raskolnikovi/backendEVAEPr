@@ -32,7 +32,7 @@ public class RubriqueEvaluationBusinessJPA implements RubriqueEvaluationBusiness
 
 	@Override
 	public void creerRubEval(RubriqueEvaluation rubEvalACreer) {
-		
+
 		repos.save(rubEvalACreer);
 		
 	}
